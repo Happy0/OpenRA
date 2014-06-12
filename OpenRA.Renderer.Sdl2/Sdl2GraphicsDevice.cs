@@ -61,6 +61,7 @@ namespace OpenRA.Renderer.Sdl2
 			Console.WriteLine("Using resolution: {0}x{1}", size.Width, size.Height);
 
 			window = SDL.SDL_CreateWindow("OpenRA", SDL.SDL_WINDOWPOS_CENTERED, SDL.SDL_WINDOWPOS_CENTERED, size.Width, size.Height, SDL.SDL_WindowFlags.SDL_WINDOW_OPENGL);
+			SDL.SDL_SetWindowGrab(window, SDL.SDL_bool.SDL_TRUE);
 
 			if (windowMode == WindowMode.Fullscreen)
 				SDL.SDL_SetWindowFullscreen(window, (uint)SDL.SDL_WindowFlags.SDL_WINDOW_FULLSCREEN);
